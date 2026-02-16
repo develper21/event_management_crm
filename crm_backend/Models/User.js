@@ -3,7 +3,7 @@ const bcrypt = require("bcrypt");
 
 const userSchema = new mongoose.Schema(
   {
-    role: { type: String, enum: ["Representative", "Supplier", "Client"], required: true },
+    role: { type: String, enum: ["SuperAdmin", "Representative", "Supplier", "Client"], required: true },
     companyName: { type: String, required: true },
     uniqueRegistrationCode: { type: String, required: true, unique: true, default: () => Math.floor(10000000 + Math.random() * 90000000).toString() },
     firstName: { type: String, required: true },
